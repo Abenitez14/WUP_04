@@ -65,6 +65,11 @@ model1 <- aov(WORDSUM~DEGREE,data=wup04data)
 summary.aov(model1)
 ```
 The pr is 0.000236 is the chance that they will all be similar and they won't be because of how low the percentage is.
+```{r}
+par(mar = c(3, 20, 2, 2))
+plot(TukeyHSD(model1,conf.level = 0.95),las=2)
+```
+There is a 95% chance that they will be similar except for LT High School to graduate and High School to Graduate those are different.
 
 # Discussion and Conclusion
 
